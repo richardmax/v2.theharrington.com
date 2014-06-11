@@ -1,0 +1,20 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /v2.theharrington.com/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /v2.theharrington.com/index.php [L]
+</IfModule>
+
+# END WordPress
+
+# BEGIN Custom
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond ${REQUEST_URI} ^/prana/(.*)$
+RewriteRule ^(.*)$ ${REQUEST_URI}/prana-wellbeing/$1 [L,R=301]
+redirect /prana/ http://www.theharrington.com/prana-wellbeing/
+</IfModule>
+# END Custom
