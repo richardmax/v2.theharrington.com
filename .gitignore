@@ -17,7 +17,7 @@ local.properties
 .loadpath
 v4/wp-admin/
 v4/wp-includes/
-v4/wp-content/
+
 v4/wp-content/_notes/
 v4/wp-content/aam/
 v4/wp-content/cache/
