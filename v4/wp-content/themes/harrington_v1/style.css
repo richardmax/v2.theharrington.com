@@ -746,59 +746,6 @@ div.widget {margin-bottom: 10px;}
 .dropdown-menu > li > a:hover {background-image: none;}
 
 
-/* Carousel 
-.carousel {overflow:hidden;padding-left: 9px;margin-left: -10px;background-color: #eeeae7;}
-.carousel img {
-    width: 100%;
-    text-align: center;
-}
-.carousel .slideshow-left,
-.carousel .slideshow-right,
-.carousel .slideshow-close {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: transparent url(images/slideshow-sprite.png) no-repeat left top;
-    top: 10px;
-    left: 0px;
-	cursor:pointer;
-}
-.carousel .slideshow-left {height: 40px;}
-.carousel .slideshow-right {
-    left: 32px;
-    background-position-x: -30px
-}
-.carousel .slideshow-close {
-	left: 64px;
-    background-position-x: -61px
-}
-.carousel .slideshow-left:hover,
-.carousel .slideshow-right:hover,
-.carousel .slideshow-close:hover {background-position-y: -41px}
-*/
-
-/*========== Plugin Overrides ==========*/
-
-/* Nivo slider */
-.slider-wrapper .nivoSlider {z-index: 1;}
-
-.theme-default .nivoSlider {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-.theme-default .nivo-controlNav {padding:5px 0}
-.theme-default .nivo-controlNav a {
-    background: url(images/bullets-small.png) no-repeat;
-    height: 17px;
-    width: 17px;
-    background-position: 2px 4px;
-	margin: 0 1px;
-}
-.theme-default .nivo-controlNav a.active {
-	background-position: 2px -17px;
-}
-
 
 /* Contact form 7 */
 .wpcf7 br {display:none;}
