@@ -926,6 +926,13 @@ div.widget {margin-bottom: 10px;}
 
 /* RICHARD MAX / V2 --------------------------------------------------------------------------- */
 
+.tab-content > .active,
+.pill-content > .active {
+  max-height:230px;
+}
+
+
+.titlepaddding{height:40px;}
 
 #menu-property-page-menu > li > a, #gal > li > a {
 

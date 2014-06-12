@@ -58,7 +58,11 @@
 		<?php
             if( $is_child == true ) { ?>
                 <h1 class="clearfix"> 1 Harrington Gardens</h1>
-        <?php } ?>
+        <?php }else{ ?>
+			
+			<div class='titlepaddding'></div>
+            
+		<?php } ?>
 		
     	<ul class="thumbnails nav">
 			<?php
