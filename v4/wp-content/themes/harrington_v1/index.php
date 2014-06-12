@@ -1,15 +1,11 @@
 <?php
 get_header(); ?>
-<div class="container">
-    <div class="row">
-        <div class="span12">
-            <?php if (function_exists('bootstrapwp_breadcrumbs')) {
-                bootstrapwp_breadcrumbs();
-            } ?>
-        </div><!--/.span12 -->
-    </div><!--/.row -->
 
-    <div class="row content">
+    
+<nav class="span2 secondaryNav">
+    <?php wp_nav_menu(array('menu' => 'Side Menu')); ?>
+</nav>
+   
         <div class="span8">
         
         	<?php 

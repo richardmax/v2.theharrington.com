@@ -3,11 +3,6 @@
 ?>
 
 <nav class=" span2 secondaryNav">
-    <ul class="nav nav-list">
-        <li class="active">
-            <a href="../properties">All Buildings</a>
-        </li>		
-    </ul> 
     <?php wp_nav_menu(array('menu' => 'Side Menu')); ?>
 </nav>
 				
