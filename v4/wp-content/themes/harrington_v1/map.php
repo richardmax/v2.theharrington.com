@@ -1,12 +1,4 @@
-<style type="text/css">
-                    .acf-map {
-                        width: 400px;
-                        height: 400px;
-                        border: #ccc solid 1px;
-                        margin: 20px 0;
-                    }
-                </style>
-                
+
                 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
                 <script type="text/javascript">
                     (function($) {

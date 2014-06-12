@@ -926,6 +926,13 @@ div.widget {margin-bottom: 10px;}
 
 /* RICHARD MAX / V2 --------------------------------------------------------------------------- */
 
+.acf-map {
+	width: 440px;
+	height: 230px;
+	border: #ccc solid 1px;
+	margin: 0;
+}
+
 .tab-content > .active,
 .pill-content > .active {
   max-height:230px;

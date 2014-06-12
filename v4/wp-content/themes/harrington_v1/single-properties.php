@@ -45,7 +45,6 @@
             foreach ($children as $child) {
                 echo '<li class="props"><a href="?p=' . ($child -> ID) . '" class="thumbnail">';
                 echo get_the_post_thumbnail($child -> ID, 'thumbnail' );
-                echo ($child -> post_title);
                 echo '<figcaption>' . $child -> post_title . '</figcaption></a></li>';
             }
             
@@ -90,6 +89,7 @@
             <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#desc" data-toggle="tab">Description</a></li>
                 <li class=""><a href="#spec" data-toggle="tab">Specifications</a></li>
+                <li class=""><a href="#brochure" data-toggle="tab">Brochure</a></li>
                 <?php
                     if( $is_child == true ) { ?>
                         <li class=""><a href="#floorplans" data-toggle="tab">Floorplans</a></li>
@@ -107,12 +107,28 @@
             <div class="fade tab-pane" id="spec">
                 <?php the_field('specifications'); ?>
             </div>
+            <div class="fade tab-pane" id="brochure">
+                <?php 	
+					$brochure_download = get_field('brochure_download');
+					if( !empty($brochure_download)){ ?>
+							<a href="<?php echo $brochure_download; ?>" >Download Brochure</a>
+				<?php } ?>
+            </div>
              
             <?php if( $is_child == true ) { ?>
                 <div class="fade tab-pane" id="floorplans">
-                    <img src="<?php the_field('floorplan_image'); ?>" alt="" />
-                    <br>
-                    <a href="<?php the_field('floorplan_download'); ?>" >Download File</a>
+                
+                	<?php 
+						$floorplan_image = get_field('floorplan_image');
+						if( !empty($floorplan_image)){ ?>
+							<img src="<?php echo $floorplan_image; ?>" alt="Floorplan" />
+                    		<br>
+					<?php }  
+						$floorplan_download = get_field('floorplan_download');
+						if( !empty($floorplan_download)){ ?>
+							<a href="<?php echo $floorplan_download; ?>" >Download Floorplan</a>
+					<?php } ?>
+					 
                 </div>
             <?php 
                 } else { ?>
