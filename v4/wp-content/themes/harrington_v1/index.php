@@ -1,44 +1,41 @@
-<?php
-get_header(); ?>
+<?php get_header(); ?>
 
-    
 <nav class="span2 secondaryNav">
     <?php wp_nav_menu(array('menu' => 'Side Menu')); ?>
 </nav>
+
+
+
+
+ <?php get_template_part('menu-filter-view') ?>
+ 
+ <?php //get_template_part('menu-filter-query') ?>
    
-        <div class="span8">
-        
-        	<?php 
-			
-				$args = array(
-					'post_type' => 'properties'
+<div class="span10">
+    <ul class="thumbnails nav">    
+        <?php	$args = array(
+					//'authors'      => '',
+					//'child_of'     => 0,
+					//'date_format'  => get_option('date_format'),
+					'depth'        => 0,
+					'echo'         => 1,
+					//'exclude'      => '',
+					//'include'      => '',
+					//'link_after'   => '',
+					//'link_before'  => '',
+					'post_type'    => 'properties',
+					'post_status'  => 'publish',
+					//'show_date'    => '',
+					'sort_column'  => 'menu_order',
+					//'sort_order'   => '',
+					'title_li'     => __(''), 
+					'walker'       => new Thumbnail_walker(),
 				);
-				$query = new WP_Query( $args );
-			
-			?>
-
-            <?php 
-			
-			
-				// The Loop
-				if ( $query->have_posts() ) {
-					echo '<ul>';
-					while ( $query->have_posts() ) {
-						$query->the_post();
-						echo '<li>' . get_the_title() . '</li>';
-					}
-					echo '</ul>';
-				} else {
-					// no posts found
-				}
-				/* Restore original Post Data */
-				wp_reset_postdata();
-			
-			
-			?>
-
-            <?php bootstrapwp_content_nav('nav-below');?>
-        </div>
-
+				wp_list_pages($args); ?>
+     </ul>
+	<?php bootstrapwp_content_nav('nav-below');?>
+    </div>
     
-    <?php get_footer(); ?>
+
+            
+<?php get_footer(); ?>

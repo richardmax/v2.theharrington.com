@@ -608,4 +608,135 @@ class Bootstrap_Walker extends Walker_Nav_Menu     {
 */
 
 
+
+
+
+
+
+
+
+/* RICHARD MAX CUSTOM EDITS ------------------------------------------------------ */
+
+
+
+
+
+
+
+
+wp_enqueue_script('new-js', get_template_directory_uri() . '/new.js', null, '0.1', false );
+
+
+
+// add_filter('wp_list_pages', create_function('$t', 'return str_replace("<a ", "<a class=\"tag\" ", $t);'));
+
+
+class Thumbnail_walker extends Walker_page {
+        function start_el(&$output, $page, $depth, $args, $current_page) {
+        if ( $depth )
+            $indent = str_repeat("\t", $depth);
+        else
+            $indent = '<!-- here -->';
+ 
+        extract($args, EXTR_SKIP);
+        $css_class = array('page_item', 'page-item-'.$page->ID);
+        if ( !empty($current_page) ) {
+            $_current_page = get_page( $current_page );
+            _get_post_ancestors($_current_page);
+            if ( isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors) )
+                $css_class[] = 'current_page_ancestor';
+            if ( $page->ID == $current_page )
+                $css_class[] = 'current_page_item';
+            elseif ( $_current_page && $page->ID == $_current_page->post_parent )
+                $css_class[] = 'current_page_parent';
+        } elseif ( $page->ID == get_option('page_for_posts') ) {
+            $css_class[] = 'current_page_parent';
+        }
+ 
+        $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
+		
+		$postclasses = get_post_class('',$page->ID);
+		foreach ($postclasses as &$postclass) {
+			$css_class .= ' ' . $postclass;
+		}
+		
+		
+		if ( $depth )
+            $css_class .= ' hentry-child';
+        else
+            $css_class .= ' hentry-parent';
+		
+		
+		
+		
+ 
+        $output .= $indent . '<li class="' . $css_class . '">';
+		
+		
+		
+		
+		
+		$output .= '<a class="thumbnail" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', '' ) . $link_after . get_the_post_thumbnail($page->ID, array(72,72));
+		
+		$output .= '<figcaption>' . get_the_title($page->ID) . '</figcaption>' .'</a> '; 
+ 
+        if ( !empty($show_date) ) {
+            if ( 'modified' == $show_date )
+                $time = $page->post_modified;
+            else
+                $time = $page->post_date;
+ 
+            $output .= " " . mysql2date($date_format, $time);
+        }
+    }
+}
+
+
+
+
+
+/* super useful function that adds the page slug to the body class */
+add_filter( 'body_class', 'add_body_class' );
+function add_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) && (is_single() || (is_page()) ||  (is_search()) ) )
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	return $classes;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

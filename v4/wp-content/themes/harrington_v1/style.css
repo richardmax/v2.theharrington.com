@@ -935,3 +935,31 @@ background-color: #7e7e8f;
 text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 text-decoration:none !important;
 }
+
+
+
+.carousel img {
+  width: 100%;
+  height: 442px;
+  max-height: 442px;
+}
+
+
+.hentry-parent{border-bottom: solid 10px #333;  }
+
+
+.span10 .thumbnails > li{width:100% !important;}
+
+.span10 .thumbnails > li > ul > li {width:147px; float:left; margin-right:20px;}
+
+.thumbnail img{width: auto;}
+
+.thumbnail > img{margin-left:0;}
+
+.thumbnail figcaption{width:100%}
+
+.hentry-parent figcaption{ width:615px; right:0; padding:5px; bottom:10px}
+.hentry-child figcaption{ width:100%; right:0; padding:5px; bottom:0px}
+
+.hentry-parent img{margin-left:10px;}
+.hentry-child img{margin-left:0px;}
