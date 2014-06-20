@@ -1,11 +1,6 @@
 <?php get_header(); ?>
 
-<nav class="span2 secondaryNav">
-    <?php wp_nav_menu(array('menu' => 'Side Menu')); ?>
-</nav>
-
-
-
+	<?php get_template_part('nav-secondary') ?>
 
  <?php get_template_part('menu-filter-view') ?>
  

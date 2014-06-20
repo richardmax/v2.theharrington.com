@@ -927,6 +927,17 @@ font-size: 11px;
 height: 20px;
 margin:0px;
 padding: 10px 0 10px 10px;
+
+line-height: 20px;
+font-size: 11px;
+height: 40px;
+padding: 10px;
+margin: 0;
+
+}
+
+#menu-side-menu > li{
+	line-height:20px;
 }
 
 #menu-side-menu > li > a:hover{
@@ -947,19 +958,26 @@ text-decoration:none !important;
 
 .hentry-parent{border-bottom: solid 10px #333;  }
 
+ul{margin:10px;}
 
-.span10 .thumbnails > li{width:100% !important;}
+.nav>li>a {
+padding: 0;
+}
 
-.span10 .thumbnails > li > ul > li {width:147px; float:left; margin-right:20px;}
 
-.thumbnail img{width: auto;}
+.home .span10 .thumbnails > li{width:100% !important;}
 
-.thumbnail > img{margin-left:0;}
+.home .span10 .thumbnails > li > ul > li {width:150px; float:left; margin-right:20px;}
 
-.thumbnail figcaption{width:100%}
+.home .thumbnail img{width: auto;}
 
-.hentry-parent figcaption{ width:615px; right:0; padding:5px; bottom:10px}
-.hentry-child figcaption{ width:100%; right:0; padding:5px; bottom:0px}
+.home .thumbnail > img{margin-left:0;}
 
-.hentry-parent img{margin-left:10px;}
-.hentry-child img{margin-left:0px;}
+.home .thumbnail figcaption{width:100%}
+
+.home .hentry-parent figcaption{ width:615px; }
+.home .hentry-child figcaption{ width:100%; right:0; padding:5px; bottom:0px}
+
+.home .hentry-parent img{margin-left:10px;}
+.home .hentry-child img{margin-left:0px;}
+

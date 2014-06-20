@@ -10,9 +10,7 @@
 	}
 ?>
 
-<nav class=" span2 secondaryNav">
-    <?php wp_nav_menu(array('menu' => 'Side Menu')); ?>
-</nav>
+<?php get_template_part('nav-secondary') ?>
             
 <nav class="propertyNav span4 available">
     <h1><?php the_title(); ?></h1>

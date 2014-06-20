@@ -5,9 +5,7 @@
 	get_header();
 ?>
 
-<nav class=" span2 secondaryNav">
-    <?php wp_nav_menu(array('menu' => 'Side Menu')); ?>
-</nav>
+<?php get_template_part('nav-secondary') ?>
 				
 <article class="span10">
   <h1><?php the_title(); ?></h1>
