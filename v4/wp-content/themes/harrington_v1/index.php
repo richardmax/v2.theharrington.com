@@ -2,9 +2,8 @@
 
 	<?php get_template_part('nav-secondary') ?>
 
- <?php get_template_part('menu-filter-view') ?>
+ <?php get_template_part('menu-filter-properties') ?>
  
- <?php //get_template_part('menu-filter-query') ?>
    
 <div class="span10">
     <ul class="thumbnails nav">    

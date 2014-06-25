@@ -662,7 +662,7 @@ class Thumbnail_walker extends Walker_page {
 		
 		
 		if ( $depth )
-            $css_class .= ' hentry-child';
+            $css_class .= ' hentry-child filter-class-view';
         else
             $css_class .= ' hentry-parent';
 		
@@ -721,8 +721,38 @@ function add_body_class( $classes ) {
 
 
 
+// front end editing via acf
 
+ 
 
+ 
+function my_pre_save_post( $post_id ) {
+ 
+    // check if this is to be a new post
+    if( $post_id != 'new' )
+    {
+        return $post_id;
+    }
+ 
+    // Create a new post
+    $post = array(
+        'post_status'  => 'draft',
+        'post_title'  => 'A title, maybe a $_POST variable',
+        'post_type'  => 'activities',
+    );
+ 
+    // insert the post
+    $post_id = wp_insert_post( $post );
+ 
+    // update $_POST['return']
+    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+ 
+    // return the new ID
+    return $post_id;
+}
+ 
+add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+ 
 
 
 

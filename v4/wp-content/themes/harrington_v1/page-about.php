@@ -23,10 +23,7 @@
       </div>
     </div>
   </div>
-  
-  
-
-  
+ 
   <?php get_template_part('carousel') ?>
 
 </article>

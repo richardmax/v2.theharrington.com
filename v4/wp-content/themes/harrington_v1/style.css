@@ -981,3 +981,12 @@ padding: 0;
 .home .hentry-parent img{margin-left:10px;}
 .home .hentry-child img{margin-left:0px;}
 
+.activities{width:100% !important; height:150px !important; background:#CCC; overflow:hidden;}
+
+.activities img{width:auto; vertical-align:top;}
+
+.activities .content-holder{display:inline-block; width:300px}
+
+#activity-dropdown{width:100%}
+
+.page-newsletters li{ list-style:none;}

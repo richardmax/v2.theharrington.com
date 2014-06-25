@@ -7,28 +7,92 @@
 <?php get_template_part('nav-secondary') ?>
 
 <nav class="span4">
-		<h1 class="title">Special offers</h1>
-			<ul id="gal" class="thumbnails nav">
-						<li class=""><a href="http://theharrington.com/special-offers/advance-purchase-discounts" class="thumbnail"><img src="http://www.theharrington.com/v4/wp-content/uploads/2013/11/Front-View-150x150.jpg"><figcaption>Advance Purchase Discounts</figcaption></a></li><li class=""><a href="http://theharrington.com/special-offers/special-offer-discount" class="thumbnail"><img src="http://www.theharrington.com/v4/wp-content/uploads/2013/11/5-150x150.jpg"><figcaption>Special Offer Discount - 5 Nights and Longer</figcaption></a></li><li class=""><a href="http://theharrington.com/special-offers/london-serviced-apartments-one-month-stay" class="thumbnail"><img src="http://www.theharrington.com/v4/wp-content/uploads/2013/11/1-150x150.jpg"><figcaption>London Serviced Apartments One Month Stay</figcaption></a></li><li class=""><a href="http://theharrington.com/special-offers/london-serviced-residences-three-months-stay" class="thumbnail"><img src="http://www.theharrington.com/v4/wp-content/uploads/DSC_6480a-150x150.jpg"><figcaption>London Serviced Residences Three Months stay</figcaption></a></li>			</ul>
-				
-		</nav>
+	<h1 class="title">Special offers</h1>
+    <ul class="thumbnails nav">    
         
+	  <?php	
+	  	
+		  $related_post_type = get_field('related_post_type');
+		  
+	  	  if($related_post_type == 'children' || $related_post_type == 'siblings'){
+			  if($related_post_type == 'children'){
+				  
+				  //$pageid = get_page_by_title( 'Special Offer Overview' )->ID; 
+				  $pageid = get_the_ID();
+				  
+			  }else if($related_post_type == 'siblings'){
+				  
+				  $mydirectparent = get_post_ancestors($post)[0];
+				  $pageid = $mydirectparent; 
+				  
+			  }
+			  
+			  if($pageid){
+			  
+				  $pageids = array();
+				  $childargs = array(
+					  'hierarchical' => 1,
+					  'child_of' => $pageid,
+					  'parent' => -1,
+					  'post_type' => 'page',
+					  'post_status' => 'publish',
+				  ); 
+				  
+				  $pages = get_pages($childargs); 
+				  
+				  //print_r(array_values($pages));
+				  
+				  
+				  if($pages){
+					  
+					  foreach($pages as $page){
+					  	$pageids[] = $page->ID;
+					  }
+					  
+					  $args = array(
+						  'child_of'     => '',
+						  'depth'        => 0,
+						  'echo'         => 1,
+						  'include'      => $pageids,
+						  'post_type'    => 'page',
+						  'post_status'  => 'publish',
+						  'sort_column'  => 'menu_order',
+						  'title_li'     => __(''), 
+						  'walker'       => new Thumbnail_walker(),
+					   );
+					   
+					   if($pageids){
+						   wp_list_pages($args);
+					   }
+					  
+				  }else{
+					   echo "no children";
+				}
+			
+			  }else{
+				  echo "no parent";
+			  }
+			  
+		  }else{
+			  echo "no related posts requested";
+		  }
+	  	 
+     	?>
         
-        
-        
-        <article class="span6 contentarea">
-        <?php 
-			the_title();
-		?>
-		<?php 
-			the_content();
-		?>
-		</article>
-        
-        
-				
-<section class="span10">
-	
-</section>
+     </ul>		
+</nav>
+    
+<article class="span6 contentarea">
+    
+    <?php
+        while (have_posts()) : the_post(); ?>
+            <h2><?php the_title(); ?></h2><?php
+            the_content();
+        endwhile; 
+    ?>
+    
+</article>
+    			
+
 
 <?php get_footer(); ?>
