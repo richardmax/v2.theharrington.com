@@ -81,7 +81,7 @@
           
      </ul>	
      
-   <?php the_field('additional_content'); ?>  
+ 
  	
 </nav>
     

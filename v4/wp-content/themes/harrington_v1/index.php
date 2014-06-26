@@ -2,10 +2,11 @@
 
 	<?php get_template_part('nav-secondary') ?>
 
- <?php get_template_part('menu-filter-properties') ?>
+
  
    
 <div class="span10">
+ <?php get_template_part('menu-filter-properties') ?>
     <ul class="thumbnails nav">    
         <?php	$args = array(
 					//'authors'      => '',

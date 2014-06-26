@@ -58,7 +58,7 @@ jQuery(document).ready(function($){
 	// VIEW / HIDE FILTER WITH MULTIPLE SELECT SUPPORT: END -----------------------------------------------------------------------------------------
 	$('.filter-class-view').each(function(){
 			// only supports ten simultaneoes selections currently!
-			$(this).hide().addClass('hidden');
+			//$(this).hide().addClass('hidden');
 	});
 });
 

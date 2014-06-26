@@ -13,13 +13,13 @@
     <option value="category-long-stay"><a><i class="icon-cloud icon-border"></i>Long Stay (28 days+)</a></option>
 </select>
 
-<select id="network" class="standard-dropdown filter-dropdown multiselect span2" multiple="multiple">
+<select id="network" class="standard-dropdown filter-dropdown multiselect span3" multiple="multiple">
     <option value="category-london"><a><i class="icon-linkedin icon-border"></i>London</a></option>
     <option value="category-newyork"><a><i class="icon-linkedin icon-border"></i>New York</a></option>
     <option value="category-singapore"><a><i class="icon-cloud icon-border"></i>Singapore</a></option>
 </select>
 
-<select id="network" class="standard-dropdown filter-dropdown multiselect span2" multiple="multiple">
+<select id="network" class="standard-dropdown filter-dropdown multiselect span3" multiple="multiple">
     <option value="tag-terrace"><a><i class="icon-linkedin icon-border"></i>Terrace</a></option>
     <option value="tag-balcony"><a><i class="icon-linkedin icon-border"></i>Balcony</a></option>
     <option value="tag-arga"><a><i class="icon-cloud icon-border"></i>Arga</a></option>

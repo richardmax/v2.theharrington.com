@@ -14,8 +14,111 @@
             
 <nav class="propertyNav span4 available">
     <h1><?php the_title(); ?></h1>
-    <ul id="gal" class="thumbnails nav">
-		<?php
+    <ul id="gal" class="thumbnails">
+    
+    
+    
+    
+    
+    
+    
+    <?php	
+	  	
+		  $related_post_type = get_field('related_post_type');
+		  
+	  	  if($related_post_type == 'children' || $related_post_type == 'siblings'){
+			  if($related_post_type == 'children'){
+				  
+				  //$pageid = get_page_by_title( 'Special Offer Overview' )->ID; 
+				  $pageid = get_the_ID();
+				  
+			  }else if($related_post_type == 'siblings'){
+				  
+				  $mydirectparent = get_post_ancestors($post)[0];
+				  $pageid = $mydirectparent; 
+				  
+			  }
+			  
+			  if($pageid){
+			  
+				  $pageids = array();
+				  $childargs = array(
+					  'hierarchical' => 1,
+					  'child_of' => $pageid,
+					  'parent' => -1,
+					  'post_type' => 'properties',
+					  'post_status' => 'publish',
+				  ); 
+				  
+				  $pages = get_pages($childargs); 
+				  
+				  //print_r(array_values($pages));
+				  
+				  
+				  if($pages){
+					  
+					  foreach($pages as $page){
+					  	$pageids[] = $page->ID;
+					  }
+					  
+					  $args = array(
+						  'child_of'     => '',
+						  'depth'        => 0,
+						  'echo'         => 1,
+						  'include'      => $pageids,
+						  'post_type'    => 'properties',
+						  'post_status'  => 'publish',
+						  'sort_column'  => 'menu_order',
+						  'title_li'     => __(''), 
+						  'walker'       => new Thumbnail_walker(),
+					   );
+					   
+					   if($pageids){
+						   wp_list_pages($args);
+					   }
+					  
+				  }else{
+					   echo "no children";
+				}
+			
+			  }else{
+				  echo "no parent";
+			  }
+			  
+		  }else{
+			  echo "no related posts requested";
+		  }
+	  	 
+     	?>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+		<!-- ?php
             
 			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
                 echo '<li class="props  active"><a href="" class="thumbnail">';
@@ -33,7 +136,7 @@
             );
 			
             $children = get_pages($args); 
-            //echo '<pre>' . print_r( $children, true ) . '</pre>';
+            echo '<pre>' . print_r( $children, true ) . '</pre>';
             
             foreach ($children as $child) {
                 echo '<li class="props"><a href="?p=' . ($child -> ID) . '" class="thumbnail">';
@@ -41,7 +144,7 @@
                 echo '<figcaption>' . $child -> post_title . '</figcaption></a></li>';
             }
             
-        ?>
+        ? -->
 	</ul>
 </nav> 
                        
@@ -49,14 +152,15 @@
     <section class="clearfix propImages row-fluid imagesToClone">
 		<?php
             if( $is_child == true ) { ?>
-                <h1 class="clearfix"> 1 Harrington Gardens</h1>
+                
+                <div class='titlepaddding'></div>
         <?php }else{ ?>
 			
 			<div class='titlepaddding'></div>
             
 		<?php } ?>
 		
-    	<ul class="thumbnails nav">
+    	<ul class="thumbnails">
 			<?php
                     $gallery = get_post_gallery( get_the_ID(), false );
 					//echo '<pre>' . print_r(  $gallery, true ) . '</pre>';

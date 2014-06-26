@@ -678,7 +678,15 @@ class Thumbnail_walker extends Walker_page {
 		
 		$output .= '<a class="thumbnail" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', '' ) . $link_after . get_the_post_thumbnail($page->ID, array(72,72));
 		
-		$output .= '<figcaption>' . get_the_title($page->ID) . '</figcaption>' .'</a> '; 
+		$output .= '<figcaption>';
+		
+		/*if ( $depth )
+            $output .= '';
+        else
+            $output .= 'See below for the properties available for: ';
+			*/
+		
+		 $output .= get_the_title($page->ID) . '</figcaption>' .'</a> '; 
  
         if ( !empty($show_date) ) {
             if ( 'modified' == $show_date )
