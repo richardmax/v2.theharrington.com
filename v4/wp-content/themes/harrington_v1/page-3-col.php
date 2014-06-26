@@ -78,8 +78,11 @@
 		  }
 	  	 
      	?>
-        
-     </ul>		
+          
+     </ul>	
+     
+   <?php the_field('additional_content'); ?>  
+ 	
 </nav>
     
 <article class="span6 contentarea">
@@ -87,8 +90,21 @@
     <?php
         while (have_posts()) : the_post(); ?>
             <h2><?php the_title(); ?></h2><?php
-            the_content();
-        endwhile; 
+            the_content(); ?>
+			
+			 <div class="acf-map">
+                    <?php 
+                        $location = get_field('map', 58);
+                        if( !empty($location) ): ?>
+                            <div class="acf-map">
+                                <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+                            </div>
+                    <?php endif; ?>
+                </div>
+                
+                <?php get_template_part('map')  ?>
+			
+    <?php    endwhile; 
     ?>
     
 </article>

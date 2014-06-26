@@ -56,6 +56,8 @@
 				$classes2use .= get_field('activity_type');
 				$classes2use .= " ";
 				$classes2use .= get_field('resturant_type');
+				$classes2use .= " ";
+				$classes2use .= $m = substr(get_field('event_start_date'), 4, 2);
             ?>
   
   			<li <?php post_class($classes2use); ?>>
