@@ -8,7 +8,13 @@
 	
 	<head>
 	<link rel="icon" href="http://www.theharrington.com/v4/wp-content/themes/harrington/assets/img/favico.ico" />
-		
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> 
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="http://www.theharrington.com/v4/wp-content/themes/harrington/assets/js/header.js">
+		<!-- header js-->
+		</script>
+		 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -36,15 +42,7 @@
 
 		<!-- theme options from options panel -->
 
- <link rel="stylesheet" href="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/css/bootstrap-3.1.1.min.css" type="text/css">
-     <link rel="stylesheet" href="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/css/bootstrap-multiselect.css" type="text/css">
-      <link rel="stylesheet" href="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/css/prettify.css" type="text/css">
-		
 
-		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/bootstrap-multiselect.js"></script>
-		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/bootstrap-3.1.1.min.js"></script>
-		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/bootstrap-multiselect.js"></script>
-		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/prettify.js"></script>
 		<!-- typeahead plugin - if top nav search bar enabled -->
 
 	</head>
