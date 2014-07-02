@@ -6,7 +6,12 @@
  
    
 <div class="span10">
+
+
  <?php get_template_part('menu-filter-properties') ?>
+ 
+ 
+ 
     <ul class="thumbnails nav">    
         <?php	$args = array(
 					//'authors'      => '',

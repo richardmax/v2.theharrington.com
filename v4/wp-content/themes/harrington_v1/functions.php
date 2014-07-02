@@ -55,11 +55,11 @@ function bootstrapwp_images() {
  */
 function bootstrapwp_styles_loader() {
 
-    wp_enqueue_style('bootstrapwp-style', get_template_directory_uri() . '/assets/css/bootstrapwp.css', false, '1.0', 'all');
-    wp_enqueue_style('bootstrapwp-default', get_stylesheet_uri());
+   wp_enqueue_style('bootstrapwp-style', get_template_directory_uri() . '/assets/css/bootstrapwp.css', false, '1.0', 'all');
+   wp_enqueue_style('bootstrapwp-default', get_stylesheet_uri());
 
     // registering scripts and styles for documentation templates
-    wp_register_style('docs-css', get_template_directory_uri() . '/templates-documentation/assets/css/docs.css', array('bootstrapwp-style'), '2.3.2', 'all');
+ wp_register_style('docs-css', get_template_directory_uri() . '/templates-documentation/assets/css/docs.css', array('bootstrapwp-style'), '2.3.2', 'all');
 
 }
 add_action('wp_enqueue_scripts', 'bootstrapwp_styles_loader');
@@ -72,14 +72,14 @@ function bootstrapwp_scripts_loader() {
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
 
-        wp_enqueue_script('comment-reply');
+       wp_enqueue_script('comment-reply');
 
     }
 
-    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0', true);
-	
-	wp_enqueue_script('bootstrap-multiselect-js', get_template_directory_uri() . '/assets/js/bootstrap-multiselect.js', array('jquery'), '1.0', true);
-	wp_enqueue_script('properties-js', get_template_directory_uri() . '/assets/js/properties.js', array('jquery'), '1.0', true);
+ //   wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0', true);
+//	
+//	wp_enqueue_script('bootstrap-multiselect-js', get_template_directory_uri() . '/assets/js/bootstrap-multiselect.js', array('jquery'), '1.0', true);
+//	wp_enqueue_script('properties-js', get_template_directory_uri() . '/assets/js/properties.js', array('jquery'), '1.0', true);
     //wp_enqueue_script('demo-js', get_template_directory_uri() . '/assets/js/bootstrapwp.demo.js', array('bootstrap-js'),'1.0',true);
     //wp_enqueue_script('javascript-js', get_template_directory_uri() . '/assets/js/javascript.js','1.0',true);
 

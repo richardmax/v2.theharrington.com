@@ -7,11 +7,40 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	
 	<head>
-	<link rel="icon" href="http://www.theharrington.com/v4/wp-content/themes/harrington/assets/img/favico.ico" />
+	<link rel="icon" href="http://www.theharrington.com/v4/wp-content/themes/harrington_v1/assets/img/favico.ico" />
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> 
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<link rel="stylesheet" href="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/css/bootstrap-3.1.1.min.css" type="text/css">
+     <link rel="stylesheet" href="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/css/bootstrap-multiselect.css" type="text/css">
+      <link rel="stylesheet" href="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/css/prettify.css" type="text/css">
+		
+		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/bootstrap-3.1.1.min.js"></script>
+		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="http://localhost/v2.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/prettify.js"></script>
 
-		<script type="text/javascript" src="http://www.theharrington.com/v4/wp-content/themes/harrington/assets/js/header.js">
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+		<script type="text/javascript" src="http://www.theharrington.com/v4/wp-content/themes/harrington_v1/assets/js/header.js">
 		<!-- header js-->
 		</script>
 		 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -41,6 +70,10 @@
 		<!-- end of wordpress head -->
 
 		<!-- theme options from options panel -->
+
+
+
+
 
 
 		<!-- typeahead plugin - if top nav search bar enabled -->
