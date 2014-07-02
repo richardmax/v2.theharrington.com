@@ -1039,3 +1039,5 @@ color: #eeeae7 !important;}
 .span10 .thumbnails > li{margin-left:0px;}
 
 .span10 .nav>li>a{padding:0px;}
+
+.input-group .form-control{height:auto !important;}
