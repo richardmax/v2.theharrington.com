@@ -626,9 +626,11 @@ class Bootstrap_Walker extends Walker_Nav_Menu     {
 
 
 
+// default
+wp_enqueue_script('multi-select-filtered-js', get_template_directory_uri() . '/multi-select-filtered.js', null, '0.1', false );
 
-wp_enqueue_script('new-js', get_template_directory_uri() . '/new.js', null, '0.1', false );
-
+// select all option - only works with x1 dropdown
+//wp_enqueue_script('multi-select-filtered-js', get_template_directory_uri() . '/multi-select-filtered-select_all.js', null, '0.1', false );
 
 
 // add_filter('wp_list_pages', create_function('$t', 'return str_replace("<a ", "<a class=\"tag\" ", $t);'));
